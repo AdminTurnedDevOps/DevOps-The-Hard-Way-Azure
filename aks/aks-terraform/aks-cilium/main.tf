@@ -18,8 +18,9 @@ resource "azurerm_kubernetes_cluster" "k8squickstart" {
   dns_prefix          = "${var.name}-dns01"
 
   network_profile {
-  network_plugin = "azure"
-  network_policy = "cilium"
+  network_plugin     = "azure"
+  network_policy     = "cilium"
+  network_data_plane = "cilium"
 }
 
   default_node_pool {
